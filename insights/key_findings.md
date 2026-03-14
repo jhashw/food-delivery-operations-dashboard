@@ -10,6 +10,6 @@
 - Demand peaked during lunch and evening hours, especially on weekends.
 
 ## Q4 Operations
-- Prep and delivery times increased across many restaurants.
+- Average Prep and delivery times increased across many restaurants, but the tail end of delivery times improved vs Q3
 - More orders shifted into late buckets in Q4.
 - A few restaurants were major contributors to delays.

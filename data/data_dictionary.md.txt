@@ -1,0 +1,16 @@
+# Data Dictionary
+
+## fact_orders
+- order_id: unique order identifier
+- order_ts: order timestamp
+- customer_id: unique customer identifier
+- restaurant_id: unique restaurant identifier
+- order_cost: order value in USD
+- rating: customer rating
+- prep_time_mins: restaurant preparation time
+- delivery_time_mins: delivery duration
+
+## dim_restaurant
+- restaurant_id: unique restaurant identifier
+- restaurant_name: restaurant name
+- cuisine: cuisine category

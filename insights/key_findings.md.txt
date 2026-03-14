@@ -1,0 +1,15 @@
+# Key Findings
+
+## Overall
+- Demand remained stable across the year, but ratings and SLA attainment declined toward year-end.
+- A small number of restaurants contributed disproportionately to late orders.
+
+## Customer Behavior
+- Retention remained a challenge at ~21% QoQ.
+- ~31% of customers placed only one order in Q2.
+- Demand peaked during lunch and evening hours, especially on weekends.
+
+## Q4 Operations
+- Prep and delivery times increased across many restaurants.
+- More orders shifted into late buckets in Q4.
+- A few restaurants were major contributors to delays.

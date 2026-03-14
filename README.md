@@ -30,6 +30,8 @@ This dashboard was designed to answer questions such as:
 
 ## Dashboard Pages
 
+The dashboard is organized into three pages, each focused on a different aspect of food delivery operations. Users can view either full-year 2024 performance or filter the analysis by quarter (Q1–Q4) using the page-level navigation. 
+
 ### 1. Executive Overview
 Focuses on overall platform performance and provides a high-level view of the most important metrics and trends
 

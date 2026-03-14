@@ -84,9 +84,9 @@ In Q4, prep and delivery times rose across many restaurants, shifting more order
 
 ## Data
 
-This project uses a **synthetic food delivery dataset** created for portfolio purposes. It is based on a food delivery dataset 
+This project uses a **synthetic food delivery dataset** which is based on the kaggle dataset https://www.kaggle.com/datasets/ahsan81/food-ordering-and-delivery-app-dataset.  
 
-The dataset was expanded to simulate realistic platform behavior, including:
+The dataset was expanded and augmented to simulate realistic platform behavior, including:
 - lunch and dinner demand peaks
 - weekend demand surges
 - customer reorders

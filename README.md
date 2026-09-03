@@ -24,7 +24,7 @@ This dashboard was designed to answer questions such as:
 - When does demand peak by hour of day and day of week?
 - Are repeat customers behaving differently from one-time customers?
 - Which restaurants are driving operational delays in Q4?
-- Are they delays primarily driven by preparation time or delivery time? 
+- Are the delays primarily driven by preparation time or delivery time? 
 
 ---
 

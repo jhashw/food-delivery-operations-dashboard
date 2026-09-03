@@ -35,7 +35,7 @@ The dashboard is organized into three pages, each focused on a different aspect 
 ### 1. Executive Overview
 Focuses on overall platform performance and provides a high-level view of the most important metrics and trends
 
-![alt text](https://github.com/jhashw/food-delivery-operations-dashboard/blob/main/images/overall_executive.png)
+![executive summary view of dashboard](https://github.com/jhashw/food-delivery-operations-dashboard/blob/main/images/overall_executive.png)
 
 **Key Insight:**  
 Demand remained stable, but ratings and SLA attainment declined toward year-end as delays increased, driven disproportionately by a few restaurants.
@@ -45,7 +45,7 @@ Demand remained stable, but ratings and SLA attainment declined toward year-end 
 ### 2. Customer Behavior Analysis (Q2)
 Focuses on customer engagement, retention, and demand patterns.
 
-![alt text](https://github.com/jhashw/food-delivery-operations-dashboard/blob/main/images/customer_behavior_q2.png)
+![customer behavior view of dashboard](https://github.com/jhashw/food-delivery-operations-dashboard/blob/main/images/customer_behavior_q2.png)
 
 **Key Insight:**  
 Retention remains a challenge at ~21% QoQ with ~31% one-time customers, while demand peaks during lunch and evening hours, especially on weekends.
@@ -55,7 +55,7 @@ Retention remains a challenge at ~21% QoQ with ~31% one-time customers, while de
 ### 3. Q4 Operations Deep Dive
 Focuses on identifying operational performance deterioration and restaurant-level bottlenecks in Q4.
 
-![alt text](https://github.com/jhashw/food-delivery-operations-dashboard/blob/main/images/operations_q4.png)
+![operations analysis view of dashboard](https://github.com/jhashw/food-delivery-operations-dashboard/blob/main/images/operations_q4.png)
 
 **Key Insight:**  
 In Q4, prep and delivery times rose across many restaurants, shifting more orders into late buckets despite slightly better delivery tail performance vs Q3.

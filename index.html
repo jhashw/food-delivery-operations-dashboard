@@ -190,22 +190,48 @@ body { color: #1A1D23; }
   box-shadow: 0 1px 3px rgba(16,24,40,.06);
 }
 .small-screen a { color: #FFFFFF; }
+  .repo { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: baseline; }
+.repo-cta { font-family: "IBM Plex Sans", sans-serif; font-size: 14.5px; }
+
+ul.intro {
+  max-width: none;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 44px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 18px 48px;
+}
+ul.intro li { position: relative; padding-left: 20px; max-width: 58ch; }
+ul.intro li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .72em;
+  width: 7px; height: 7px;
+  background: var(--signal);
+  border-radius: 50%;
+}
+ul.intro strong { font-weight: 600; color: #1A1D23; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <p class="repo"><a href="https://github.com/jhashw/food-delivery-operations-dashboard">jhashw / food-delivery-operations-dashboard</a></p>
+  <p class="repo">
+  <a href="https://github.com/jhashw/food-delivery-operations-dashboard">jhashw / food-delivery-operations-dashboard</a>
+  <a class="repo-cta" href="https://github.com/jhashw/food-delivery-operations-dashboard">Source and data on GitHub</a>
+</p>
 
   <!-- EDIT: headline + intro. Say what question the dashboard answers. -->
   <h1>Food delivery operations dashboard</h1>
 
-  <p class="intro">
-    A Power BI dashboard tracking platform health for a food delivery service - demand, customer retention, SLA performance, and restaurant-level operational bottlenecks. 
-     Designed with stakeholder-focused views (executives, CX teams, operations), time intelligence and P95 latency metrics, and targeted charts for root cause analysis of delays. 
-     Demand held steady across 2024 while ratings and on-time delivery slipped. Traced Q4 delivery delays to prep time at a few high-impact restaurants which caused most SLA misses even as the tail-end of delivery times improved.
-  </p>
-
+<ul class="intro">
+  <li>Tracks platform health for a food delivery service: demand, customer retention, SLA performance, and restaurant-level operational bottlenecks.</li>
+  <li>Stakeholder-focused views for executives, CX teams, and operations, each filterable to full-year 2024 or any quarter.</li>
+  <li>Time intelligence and P95 latency metrics, with targeted charts for root-cause analysis of delays.</li>
+  <li><strong>Key finding:</strong> demand held steady across 2024 while ratings and on-time delivery slipped. Q4 delays traced back to prep time at a few high-impact restaurants, which drove most SLA misses even as the delivery tail improved.</li>
+</ul>
+  
   <div class="board">
     <div class="frame">
       <iframe
@@ -227,24 +253,34 @@ body { color: #1A1D23; }
 
   <!-- EDIT: replace the bullets below with the real specifics. -->
   <div class="notes">
-    <div>
-      <h2>What it answers</h2>
-      <ul>
-        <li>Which delivery zones miss their promised window most often</li>
-        <li>How courier performance shifts across the dinner peak</li>
-        <li>Where order-to-doorstep time is actually being lost</li>
-      </ul>
-    </div>
-    <div>
-      <h2>How it's built</h2>
-      <ul>
-        <li>Power BI Desktop — import model, star schema</li>
-        <li>Measures in DAX; transformations in Power Query</li>
-        <li>Source data and model documented in the repo</li>
-      </ul>
-    </div>
+  <div>
+    <h2>What it answers</h2>
+    <ul>
+      <li>Is demand stable, or are orders and revenue shifting over the year?</li>
+      <li>How are customer ratings and SLA attainment trending?</li>
+      <li>Which cuisines and restaurants contribute most to revenue?</li>
+      <li>How strong is quarter-over-quarter retention, and how many customers order only once?</li>
+      <li>When does demand peak by hour of day and day of week?</li>
+      <li>Which restaurants drive Q4 delays, and is prep time or delivery time the cause?</li>
+    </ul>
   </div>
-
+  <div>
+    <h2>How it's structured</h2>
+    <ul>
+      <li>Executive overview: orders, revenue, average order value, ratings, SLA 60m attainment, P95 fulfillment</li>
+      <li>Customer behavior: retention, order frequency, reorder timing, day-hour demand patterns</li>
+      <li>Q4 operations deep dive: prep and delivery trends, late-order delay buckets, restaurant-level contributors</li>
+    </ul>
+  </div>
+  <div>
+    <h2>About the data</h2>
+    <ul>
+      <li>Synthetic transactional dataset, expanded from a public Kaggle food-ordering dataset</li>
+      <li>Simulates lunch and dinner peaks, weekend surges, reorders, restaurant prep differences, and worsening Q4 delays</li>
+      <li>Sample data and a data dictionary are in the repo</li>
+    </ul>
+  </div>
+</div>
   <footer>
     Built by Shweta Jha ·
     <a href="https://github.com/jhashw/food-delivery-operations-dashboard">Source and data on GitHub</a>

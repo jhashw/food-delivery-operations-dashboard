@@ -75,8 +75,7 @@
     margin: 0 0 40px;
   }
 
-  /* The dashboard sits on white so the Power BI canvas reads as
-     a deliberate panel rather than a pasted-in rectangle. */
+
   .board {
     background: var(--paper);
     border-radius: 4px;
@@ -149,8 +148,6 @@
     outline-offset: 3px;
   }
 
-  /* Publish-to-web embeds don't reflow on narrow screens, so below
-     tablet width the panel is dropped for a direct link instead. */
   .small-screen { display: none; }
   @media (max-width: 720px) {
     .wrap { padding: 40px 20px 60px; }
@@ -212,6 +209,18 @@ ul.intro li::before {
   border-radius: 50%;
 }
 ul.intro strong { font-weight: 600; color: #1A1D23; }
+
+ul.intro { grid-template-columns: 1fr; gap: 16px; }
+ul.intro li { max-width: 88ch; }
+
+
+.repo a { color: #6B7280; border-bottom: 1px solid var(--rule); }
+.repo a:hover,
+.repo a:focus-visible { color: #1B4DD1; border-bottom-color: #1B4DD1; }
+.repo-cta { color: #1B4DD1; border-bottom-color: #9DB5F0; }
+
+footer a, .board-note a { color: #1B4DD1; text-decoration: none; border-bottom: 1px solid #9DB5F0; }
+footer a:hover, .board-note a:hover { border-bottom-color: #1B4DD1; }
 </style>
 </head>
 <body>
@@ -222,7 +231,6 @@ ul.intro strong { font-weight: 600; color: #1A1D23; }
   <a class="repo-cta" href="https://github.com/jhashw/food-delivery-operations-dashboard">Source and data on GitHub</a>
 </p>
 
-  <!-- EDIT: headline + intro. Say what question the dashboard answers. -->
   <h1>Food delivery operations dashboard</h1>
 
 <ul class="intro">
@@ -251,7 +259,6 @@ ul.intro strong { font-weight: 600; color: #1A1D23; }
     <a href="https://app.powerbi.com/view?r=eyJrIjoiOTJjNzQ3NzUtNzYxMS00ZDg0LWEyNmEtNmQwODIzNWEzNWVkIiwidCI6IjNjMjcwYTQ3LWUyOGEtNDM3NS1iZDZjLTNjNzljMWI3YzQ1YyJ9">Open the dashboard</a>
   </div>
 
-  <!-- EDIT: replace the bullets below with the real specifics. -->
   <div class="notes">
   <div>
     <h2>What it answers</h2>

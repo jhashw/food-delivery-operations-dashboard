@@ -4,11 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- ═══════════════════════════════════════════════════════════════
-     EDIT THESE. Everything LinkedIn shows in the preview card lives
-     in this block. Absolute URLs only — relative paths will not work.
-     ═══════════════════════════════════════════════════════════════ -->
-
 <title>Food Delivery Operations Dashboard — Shweta Jha</title>
 
 <meta name="description" content="An interactive Power BI dashboard tracking delivery performance across couriers, zones and time of day.">
@@ -179,6 +174,22 @@
     }
     .notes { margin-top: 48px; }
   }
+     :root {
+  --ink:    #F4F5F7;
+  --paper:  #FFFFFF;
+  --muted:  #6B7280;
+  --rule:   #DCDFE4;
+  --signal: #1B4DD1;
+}
+body { color: #1A1D23; }
+.intro, .notes p, .notes li { color: #4B5260; }
+.notes h2, footer a, .board-note a { color: #1A1D23; }
+.board {
+  padding: 0;
+  border: 1px solid var(--rule);
+  box-shadow: 0 1px 3px rgba(16,24,40,.06);
+}
+.small-screen a { color: #FFFFFF; }
 </style>
 </head>
 <body>
@@ -190,9 +201,9 @@
   <h1>Food delivery operations dashboard</h1>
 
   <p class="intro">
-    Delivery performance across couriers, zones and time of day — built to
-    show where orders lose time and which of those delays are worth fixing.
-    Filter and drill into any view below.
+    A Power BI dashboard tracking platform health for a food delivery service - demand, customer retention, SLA performance, and restaurant-level operational bottlenecks. 
+     Designed with stakeholder-focused views (executives, CX teams, operations), time intelligence and P95 latency metrics, and targeted charts for root cause analysis of delays. 
+     Demand held steady across 2024 while ratings and on-time delivery slipped. Traced Q4 delivery delays to prep time at a few high-impact restaurants which caused most SLA misses even as the tail-end of delivery times improved.
   </p>
 
   <div class="board">

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ═══════════════════════════════════════════════════════════════
+     EDIT THESE. Everything LinkedIn shows in the preview card lives
+     in this block. Absolute URLs only — relative paths will not work.
+     ═══════════════════════════════════════════════════════════════ -->
+
+<title>Food Delivery Operations Dashboard — Shweta Jha</title>
+
+<meta name="description" content="An interactive Power BI dashboard tracking delivery performance across couriers, zones and time of day.">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jhashw.github.io/food-delivery-operations-dashboard/">
+<meta property="og:title" content="Food Delivery Operations Dashboard">
+<meta property="og:description" content="An interactive Power BI dashboard tracking delivery performance across couriers, zones and time of day.">
+<meta property="og:image" content="https://jhashw.github.io/food-delivery-operations-dashboard/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink:      #16191F;
+    --slate:    #2A2F3A;
+    --paper:    #FFFFFF;
+    --muted:    #8A919E;
+    --rule:     #343A46;
+    --signal:   #FFB020;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: #E8EAEE;
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 56px 28px 80px;
+  }
+
+  .repo {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: .01em;
+    margin: 0 0 44px;
+  }
+  .repo a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .repo a:hover { color: #E8EAEE; border-bottom-color: var(--muted); }
+
+  h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    max-width: 17ch;
+  }
+
+  .intro {
+    max-width: 62ch;
+    color: #C2C7D0;
+    margin: 0 0 40px;
+  }
+
+  /* The dashboard sits on white so the Power BI canvas reads as
+     a deliberate panel rather than a pasted-in rectangle. */
+  .board {
+    background: var(--paper);
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.06);
+  }
+
+  .frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    min-height: 420px;
+  }
+  .frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .board-note {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: baseline;
+    font-size: 14px;
+    color: var(--muted);
+    margin: 14px 2px 0;
+  }
+  .board-note .live {
+    color: var(--signal);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+  }
+  .board-note a { color: #C2C7D0; }
+
+  .notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid var(--rule);
+  }
+  .notes h2 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    color: #E8EAEE;
+  }
+  .notes p, .notes ul {
+    margin: 0;
+    font-size: 15.5px;
+    color: #A9AFBA;
+    max-width: 46ch;
+  }
+  .notes ul { padding-left: 18px; }
+  .notes li { margin-bottom: 6px; }
+
+  footer {
+    margin-top: 56px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  footer a { color: #C2C7D0; }
+
+  a:focus-visible, iframe:focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+  }
+
+  /* Publish-to-web embeds don't reflow on narrow screens, so below
+     tablet width the panel is dropped for a direct link instead. */
+  .small-screen { display: none; }
+  @media (max-width: 720px) {
+    .wrap { padding: 40px 20px 60px; }
+    .board, .board-note { display: none; }
+    .small-screen {
+      display: block;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 22px;
+    }
+    .small-screen p { margin: 0 0 14px; color: #A9AFBA; font-size: 15.5px; }
+    .small-screen a {
+      display: inline-block;
+      background: var(--signal);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 3px;
+    }
+    .notes { margin-top: 48px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="repo"><a href="https://github.com/jhashw/food-delivery-operations-dashboard">jhashw / food-delivery-operations-dashboard</a></p>
+
+  <!-- EDIT: headline + intro. Say what question the dashboard answers. -->
+  <h1>Food delivery operations dashboard</h1>
+
+  <p class="intro">
+    Delivery performance across couriers, zones and time of day — built to
+    show where orders lose time and which of those delays are worth fixing.
+    Filter and drill into any view below.
+  </p>
+
+  <div class="board">
+    <div class="frame">
+      <iframe
+        title="Food Delivery Operations Dashboard"
+        src="https://app.powerbi.com/view?r=eyJrIjoiOTJjNzQ3NzUtNzYxMS00ZDg0LWEyNmEtNmQwODIzNWEzNWVkIiwidCI6IjNjMjcwYTQ3LWUyOGEtNDM3NS1iZDZjLTNjNzljMWI3YzQ1YyJ9"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <p class="board-note">
+    <span class="live">Interactive</span>
+    <span>Use the page tabs along the bottom of the report to move between views.</span>
+  </p>
+
+  <div class="small-screen">
+    <p>This report is built for a wider screen. Open it directly for the full interactive version.</p>
+    <a href="https://app.powerbi.com/view?r=eyJrIjoiOTJjNzQ3NzUtNzYxMS00ZDg0LWEyNmEtNmQwODIzNWEzNWVkIiwidCI6IjNjMjcwYTQ3LWUyOGEtNDM3NS1iZDZjLTNjNzljMWI3YzQ1YyJ9">Open the dashboard</a>
+  </div>
+
+  <!-- EDIT: replace the bullets below with the real specifics. -->
+  <div class="notes">
+    <div>
+      <h2>What it answers</h2>
+      <ul>
+        <li>Which delivery zones miss their promised window most often</li>
+        <li>How courier performance shifts across the dinner peak</li>
+        <li>Where order-to-doorstep time is actually being lost</li>
+      </ul>
+    </div>
+    <div>
+      <h2>How it's built</h2>
+      <ul>
+        <li>Power BI Desktop — import model, star schema</li>
+        <li>Measures in DAX; transformations in Power Query</li>
+        <li>Source data and model documented in the repo</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    Built by Shweta Jha ·
+    <a href="https://github.com/jhashw/food-delivery-operations-dashboard">Source and data on GitHub</a>
+  </footer>
+
+</div>
+</body>
+</html>

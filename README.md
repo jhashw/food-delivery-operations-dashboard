@@ -1,7 +1,7 @@
 # Food Delivery Operations Dashboard
 
 A Power BI project analyzing food delivery demand, customer retention, SLA performance, and restaurant-level operational bottlenecks using a synthetic transactional dataset.
-
+**[Try it →](https://jhashw.github.io/food-delivery-operations-dashboard/)**
 ## Project Overview
 
 This dashboard was built to simulate how a food delivery operations team might monitor platform health across three lenses:
